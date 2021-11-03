@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { InjectedModalProps } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { parseUnits } from 'ethers/lib/utils'
 import useTheme from 'hooks/useTheme'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
@@ -84,7 +84,7 @@ const SellModal: React.FC<SellModalProps> = ({ variant, nftToSell, onDismiss }) 
   const [confirmedTxHash, setConfirmedTxHash] = useState('')
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { callWithGasPrice } = useCallWithGasPrice()
   const { toastSuccess } = useToast()
   const collectionContract = useErc721CollectionContract(nftToSell.collectionAddress)

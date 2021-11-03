@@ -1,10 +1,10 @@
 import { useCallback } from 'react'
-import { UnsupportedChainIdError, useWeb3React } from '@web3-react/core'
+import { UnsupportedChainIdError, useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { NoBscProviderError } from '@binance-chain/bsc-connector'
 import {
-  NoEthereumProviderError,
+  NoKlaytnProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from '@web3-react/injected-connector'
+} from '@sixnetwork/caverjs-react-injected-connector'
 import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector,
@@ -22,7 +22,7 @@ import { resetUserNftState } from '../state/nftMarket/reducer'
 const useAuth = () => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
-  const { chainId, activate, deactivate } = useWeb3React()
+  const { chainId, activate, deactivate } = useCaverJsReact()
   const { toastError } = useToast()
 
   const login = useCallback(
@@ -37,7 +37,7 @@ const useAuth = () => {
             }
           } else {
             window.localStorage.removeItem(connectorLocalStorageKey)
-            if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
+            if (error instanceof NoKlaytnProviderError || error instanceof NoBscProviderError) {
               toastError(t('Provider Error'), t('No provider was found'))
             } else if (
               error instanceof UserRejectedRequestErrorInjected ||

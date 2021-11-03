@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Price } from '@pancakeswap/sdk'
 import { Button, Grid, Text, Flex, Box, BinanceIcon, useModal, Skeleton } from '@pancakeswap/uikit'
 import { formatNumber } from 'utils/formatBalance'
@@ -78,7 +78,7 @@ interface ForSaleTableRowsProps {
 }
 
 const ForSaleTableRow: React.FC<ForSaleTableRowsProps> = ({ nftsForSale }) => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { t } = useTranslation()
   const bnbBusdPrice = useBNBBusdPrice()
   return (

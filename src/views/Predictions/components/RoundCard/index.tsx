@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useGetBetByEpoch, useGetCurrentEpoch } from 'state/predictions/hooks'
 import { BetPosition, NodeRound } from 'state/types'
 import { getMultiplierV2 } from '../../helpers'
@@ -15,7 +15,7 @@ interface RoundCardProps {
 const RoundCard: React.FC<RoundCardProps> = ({ round }) => {
   const { epoch, lockPrice, closePrice, totalAmount, bullAmount, bearAmount } = round
   const currentEpoch = useGetCurrentEpoch()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const ledger = useGetBetByEpoch(account, epoch)
   const hasEntered = ledger ? ledger.amount.gt(0) : false
   const hasEnteredUp = hasEntered && ledger.position === BetPosition.BULL

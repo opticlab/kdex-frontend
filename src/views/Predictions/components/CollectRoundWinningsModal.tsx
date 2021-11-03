@@ -16,7 +16,7 @@ import {
   ModalCloseButton,
   Skeleton,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useAppDispatch } from 'state'
 import { REWARD_RATE } from 'state/predictions/config'
 import { fetchNodeHistory, markAsCollected } from 'state/predictions'
@@ -77,7 +77,7 @@ const calculateClaimableRounds = (history): ClaimableRounds => {
 
 const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({ onDismiss, onSuccess }) => {
   const [isPendingTx, setIsPendingTx] = useState(false)
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { t } = useTranslation()
   const { toastSuccess, toastError } = useToast()
   const { callWithGasPrice } = useCallWithGasPrice()

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import useTokenBalance, { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
 import useAuth from 'hooks/useAuth'
 import { useTranslation } from 'contexts/Localization'
@@ -16,7 +16,7 @@ interface WalletInfoProps {
 
 const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowBnbBalance, onDismiss }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { balance, fetchStatus } = useGetBnbBalance()
   const { balance: cakeBalance, fetchStatus: cakeFetchStatus } = useTokenBalance(tokens.cake.address)
   const { logout } = useAuth()

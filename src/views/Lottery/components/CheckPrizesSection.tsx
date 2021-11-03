@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Button, Heading, Flex, useModal, AutoRenewIcon } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import { useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
@@ -25,7 +25,7 @@ const TornTicketImage = styled.img`
 
 const CheckPrizesSection = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const {
     isTransitioning,
     currentRound: { status },

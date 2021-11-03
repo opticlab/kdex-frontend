@@ -85,7 +85,7 @@ function TransactionSubmittedContent({
               {t('View on BscScan')}
             </Link>
           )}
-          {currencyToAdd && library?.provider?.isMetaMask && (
+          {currencyToAdd && library?.provider?.isKaikas && (
             <Button
               variant="tertiary"
               mt="12px"

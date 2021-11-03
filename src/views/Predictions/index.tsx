@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Helmet } from 'react-helmet-async'
 import { useMatchBreakpoints, useModal } from '@pancakeswap/uikit'
 import { useAppDispatch } from 'state'
@@ -24,7 +24,7 @@ const Predictions = () => {
   const { isDesktop } = useMatchBreakpoints()
   const [hasAcceptedRisk, setHasAcceptedRisk] = useUserPredictionAcceptedRisk()
   const [showDisclaimer] = useUserPredictionChartDisclaimerShow()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const status = useGetPredictionsStatus()
   const isChartPaneOpen = useIsChartPaneOpen()
   const dispatch = useAppDispatch()

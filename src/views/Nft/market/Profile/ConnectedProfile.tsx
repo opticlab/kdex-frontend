@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useProfile } from 'state/profile/hooks'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Box } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
 import { Route } from 'react-router'
@@ -34,7 +34,7 @@ const TabMenuWrapper = styled(Box)`
 const ConnectedProfile = () => {
   const { profile, isLoading: isProfileLoading } = useProfile()
   const { achievements, achievementFetchStatus } = useAchievements()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { userNftsInitializationState, nfts: userNfts } = useUserNfts()
 
   useFetchAchievements()

@@ -6,11 +6,11 @@ import { useGetCollections, useUserNfts } from 'state/nftMarket/hooks'
 import usePreviousValue from 'hooks/usePreviousValue'
 import { useProfile } from 'state/profile/hooks'
 import { NftLocation, UserNftInitializationState } from 'state/nftMarket/types'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 
 const useFetchUserNfts = () => {
   const dispatch = useAppDispatch()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { profile, isInitialized: isProfileInitialized, isLoading: isProfileLoading } = useProfile()
   const { userNftsInitializationState } = useUserNfts()
   const collections = useGetCollections()

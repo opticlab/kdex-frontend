@@ -13,7 +13,7 @@ import {
   useModal,
 } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { LotteryTicket, LotteryTicketClaimData } from 'config/constants/types'
 import { fetchLottery } from 'state/lottery/helpers'
 import { getWinningTickets } from 'state/lottery/fetchUnclaimedUserRewards'
@@ -63,7 +63,7 @@ const PreviousRoundTicketsInner: React.FC<{ roundId: string }> = ({ roundId }) =
   }>({ allWinningTickets: null, ticketsWithUnclaimedRewards: null, isFetched: false, claimData: null })
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { totalTickets } = useGetUserLotteryGraphRoundById(roundId)
   const [onPresentClaimModal] = useModal(<ClaimPrizesModal roundsToClaim={[userWinningTickets.claimData]} />, false)
 

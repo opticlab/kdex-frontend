@@ -1,6 +1,6 @@
 import React from 'react'
 import { NoProfileAvatarIcon, Flex, Heading, Skeleton, Text, Box } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import styled from 'styled-components'
 import { useProfile } from 'state/profile/hooks'
 import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
@@ -38,7 +38,7 @@ const StyledNoProfileAvatarIcon = styled(NoProfileAvatarIcon)`
 const UserDetail = () => {
   const { profile, isLoading } = useProfile()
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const truncatedAddress = truncateHash(account)
 
   const getDesktopHeading = () => {

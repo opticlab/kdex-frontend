@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Box, Flex, Heading, Text, Button, Link, OpenNewIcon } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { getRoundResult, Result } from 'state/predictions/helpers'
@@ -103,7 +103,7 @@ const getPnlSummary = (bets: Bet[], currentEpoch: number): PnlSummary => {
 
 const PnlTab: React.FC<PnlTabProps> = ({ hasBetHistory, bets }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const currentEpoch = useGetCurrentEpoch()
   const bnbBusdPrice = useBNBBusdPrice()
 

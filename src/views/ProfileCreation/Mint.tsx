@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { formatUnits } from '@ethersproject/units'
 import { Card, CardBody, Heading, Text } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useTranslation } from 'contexts/Localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCake, useBunnyFactory } from 'hooks/useContract'
@@ -32,7 +32,7 @@ const Mint: React.FC = () => {
   const { toastSuccess } = useToast()
   const dispatch = useAppDispatch()
 
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const cakeContract = useCake()
   const bunnyFactoryContract = useBunnyFactory()
   const { t } = useTranslation()

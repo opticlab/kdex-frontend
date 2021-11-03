@@ -12,7 +12,7 @@ import {
   Skeleton,
   useModal,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { NftLocation, NftToken } from 'state/nftMarket/types'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from 'contexts/Localization'
@@ -104,7 +104,7 @@ interface ManageNFTsCardProps {
 
 const ManageNFTsCard: React.FC<ManageNFTsCardProps> = ({ nft, isLoading, isOwnNft }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   const hasThisNft = isOwnNft && nft
 

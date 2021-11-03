@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js'
 import { ethers } from 'ethers'
 import { Modal, Text, Flex, BalanceInput, Box, Button, PancakeRoundIcon } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { formatNumber, getBalanceAmount, getBalanceNumber } from 'utils/formatBalance'
 import { ethersToBigNumber } from 'utils/bigNumber'
 import useTheme from 'hooks/useTheme'
@@ -53,7 +53,7 @@ const PlaceBidModal: React.FC<PlaceBidModalProps> = ({
   connectedBidder,
   refreshBidders,
 }) => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { t } = useTranslation()
   const { theme } = useTheme()
   const { callWithGasPrice } = useCallWithGasPrice()

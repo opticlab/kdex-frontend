@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Box, InjectedModalProps, Text } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useAppDispatch } from 'state'
 import { useProfile } from 'state/profile/hooks'
 import { useTranslation } from 'contexts/Localization'
@@ -29,7 +29,7 @@ const ChangeProfilePicPage: React.FC<ChangeProfilePicPageProps> = ({ onDismiss }
   const dispatch = useAppDispatch()
   const { profile } = useProfile()
   const profileContract = useProfileContract()
-  const { account, library } = useWeb3React()
+  const { account, library } = useCaverJsReact()
   const { toastSuccess } = useToast()
   const { callWithGasPrice } = useCallWithGasPrice()
 

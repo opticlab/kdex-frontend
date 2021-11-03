@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Flex, Spinner, Text } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import styled from 'styled-components'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from 'contexts/Localization'
@@ -46,7 +46,7 @@ const SpinnerWrapper = styled.div`
 `
 
 const History = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const dispatch = useAppDispatch()
   const isHistoryPaneOpen = useIsHistoryPaneOpen()
   const isFetchingHistory = useGetIsFetchingHistory()

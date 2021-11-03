@@ -13,7 +13,6 @@ import useTheme from 'hooks/useTheme'
 import QuestionHelper from '../../QuestionHelper'
 import TransactionSettings from './TransactionSettings'
 import ExpertModal from './ExpertModal'
-import GasSettings from './GasSettings'
 
 const ScrollableContainer = styled(Flex)`
   flex-direction: column;
@@ -72,7 +71,6 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
             <Text mb="24px">{t('Dark mode')}</Text>
             <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
           </Flex>
-          <GasSettings />
         </Flex>
         <Flex pt="24px" flexDirection="column" borderTop={`1px ${theme.colors.cardBorder} solid`}>
           <Text bold textTransform="uppercase" fontSize="12px" color="secondary" mb="24px">

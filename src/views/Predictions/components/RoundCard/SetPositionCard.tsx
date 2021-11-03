@@ -17,7 +17,7 @@ import {
 } from '@pancakeswap/uikit'
 import { ethers } from 'ethers'
 import { parseUnits } from 'ethers/lib/utils'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useGetMinBetAmount } from 'state/predictions/hooks'
 import { useTranslation } from 'contexts/Localization'
 import { usePredictionsContract } from 'hooks/useContract'
@@ -76,7 +76,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({ position, togglePosit
   const [errorMessage, setErrorMessage] = useState(null)
   const [percent, setPercent] = useState(0)
 
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { swiper } = useSwiper()
   const { balance: bnbBalance } = useGetBnbBalance()
   const minBetAmount = useGetMinBetAmount()

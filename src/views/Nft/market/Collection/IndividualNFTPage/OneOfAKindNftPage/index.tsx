@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Flex } from '@pancakeswap/uikit'
 import sum from 'lodash/sum'
 import Page from 'components/Layout/Page'
@@ -28,7 +28,7 @@ const IndividualNFTPage: React.FC<IndividualNFTPageProps> = ({ collectionAddress
 
   const { data: distributionData, isFetching: isFetchingDistribution } = useGetCollectionDistribution(collectionAddress)
 
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { userNftsInitializationState, nfts: userNfts } = useUserNfts()
   useFetchUserNfts()
 

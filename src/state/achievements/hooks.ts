@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
 import { State, AchievementState } from '../types'
 import { fetchAchievements } from '.'
 
 export const useFetchAchievements = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const dispatch = useAppDispatch()
 
   useEffect(() => {

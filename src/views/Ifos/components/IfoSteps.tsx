@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import every from 'lodash/every'
 import { Stepper, Step, StepStatus, Card, CardBody, Heading, Text, Button, Link, OpenNewIcon } from '@pancakeswap/uikit'
 import { Link as RouterLink } from 'react-router-dom'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import { Ifo } from 'config/constants/types'
 import { WalletIfoData } from 'views/Ifos/types'
@@ -35,7 +35,7 @@ const Wrapper = styled(Container)`
 const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
   const { poolBasic, poolUnlimited } = walletIfoData
   const { hasProfile } = useProfile()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { t } = useTranslation()
   const { balance } = useTokenBalance(ifo.currency.address)
   const stepsValidationStatus = [

@@ -11,7 +11,7 @@ import {
   AutoRenewIcon,
   BunnyPlaceholderIcon,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Token } from '@pancakeswap/sdk'
 import { Ifo, PoolIds } from 'config/constants/types'
 import tokens from 'config/constants/tokens'
@@ -87,7 +87,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
   onApprove,
   enableStatus,
 }) => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { t } = useTranslation()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     t(

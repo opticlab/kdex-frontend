@@ -1,6 +1,6 @@
 import React from 'react'
 import { ModalProvider, light, dark } from '@pancakeswap/uikit'
-import { Web3ReactProvider } from '@web3-react/core'
+import { CaverJsReactProvider } from '@sixnetwork/caverjs-react-core'
 import { HelmetProvider } from 'react-helmet-async'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
@@ -18,7 +18,7 @@ const ThemeProviderWrapper = (props) => {
 
 const Providers: React.FC = ({ children }) => {
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
+    <CaverJsReactProvider getLibrary={getLibrary}>
       <Provider store={store}>
         <ToastsProvider>
           <HelmetProvider>
@@ -32,7 +32,7 @@ const Providers: React.FC = ({ children }) => {
           </HelmetProvider>
         </ToastsProvider>
       </Provider>
-    </Web3ReactProvider>
+    </CaverJsReactProvider>
   )
 }
 

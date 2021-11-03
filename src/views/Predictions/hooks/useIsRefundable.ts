@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { getPredictionsContract } from 'utils/contractHelpers'
 
 const useIsRefundable = (epoch: number) => {
   const [isRefundable, setIsRefundable] = useState(false)
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   useEffect(() => {
     const fetchRefundableStatus = async () => {

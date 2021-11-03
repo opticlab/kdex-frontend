@@ -8,19 +8,19 @@ import { nodes } from './getRpcUrl'
  * @returns {boolean} true if the setup succeeded, false otherwise
  */
 export const setupNetwork = async () => {
-  const provider = window.ethereum
+  const provider = window.klaytn
   if (provider) {
     const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
     try {
-      await provider.request({
+      await provider.sendAsync({
         method: 'wallet_addEthereumChain',
         params: [
           {
             chainId: `0x${chainId.toString(16)}`,
-            chainName: 'Binance Smart Chain Mainnet',
+            chainName: 'Klaytn Mainnet',
             nativeCurrency: {
-              name: 'BNB',
-              symbol: 'bnb',
+              name: 'Klay',
+              symbol: 'klay',
               decimals: 18,
             },
             rpcUrls: nodes,
@@ -47,7 +47,7 @@ export const setupNetwork = async () => {
  * @returns {boolean} true if the token has been added, false otherwise
  */
 export const registerToken = async (tokenAddress: string, tokenSymbol: string, tokenDecimals: number) => {
-  const tokenAdded = await window.ethereum.request({
+  const tokenAdded = await window.klaytn.sendAsync({
     method: 'wallet_watchAsset',
     params: {
       type: 'ERC20',

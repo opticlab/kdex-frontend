@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { Flex, Text, Button, ButtonMenu, ButtonMenuItem, Message, Link } from '@pancakeswap/uikit'
 import { FetchStatus } from 'hooks/useTokenBalance'
@@ -33,7 +33,7 @@ const ReviewStage: React.FC<ReviewStageProps> = ({
   continueToNextStage,
 }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   return (
     <>
       <Flex px="24px" pt="24px" flexDirection="column">

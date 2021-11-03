@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import usePreviousValue from 'hooks/usePreviousValue'
 import { useAppDispatch } from 'state'
 import { useGetCurrentEpoch, useGetSortedRounds } from 'state/predictions/hooks'
@@ -11,7 +11,7 @@ import useSwiper from './useSwiper'
 const useOnNextRound = () => {
   const currentEpoch = useGetCurrentEpoch()
   const rounds = useGetSortedRounds()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const previousEpoch = usePreviousValue(currentEpoch)
   const { swiper } = useSwiper()
   const dispatch = useAppDispatch()

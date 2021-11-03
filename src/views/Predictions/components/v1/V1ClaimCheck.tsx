@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { Box, Flex, Text, ChevronRightIcon, useModal } from '@pancakeswap/uikit'
@@ -20,7 +20,7 @@ const StyledClaimCheck = styled(Flex)`
 const ClaimCheck = () => {
   const [isFetching, setIsFetching] = useState(false)
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   const [onPresentCollectWinningsModal] = useModal(<CollectRoundWinningsModal />, false)
 

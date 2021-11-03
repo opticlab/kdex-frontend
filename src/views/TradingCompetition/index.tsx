@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useProfile } from 'state/profile/hooks'
 import { Flex, Box, Image } from '@pancakeswap/uikit'
 import styled from 'styled-components'
@@ -66,7 +66,7 @@ const BottomBunnyWrapper = styled(Box)`
 
 const TradingCompetition = () => {
   const profileApiUrl = process.env.REACT_APP_API_PROFILE
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { t } = useTranslation()
   const { profile, isLoading } = useProfile()
   const { isDark, theme } = useTheme()

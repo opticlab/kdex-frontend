@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import nftSaleAbi from 'config/abi/nftSale.json'
 import { useProfile } from 'state/profile/hooks'
 import ArtistSection from './components/ArtistSection'
@@ -18,7 +18,7 @@ import { getUserStatus } from './utils'
 const REFRESH_INTERVAL = 4000
 
 const PancakeSquad: React.FC = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { hasProfile, isInitialized } = useProfile()
   const [eventInfos, setEventInfo] = useState<EventInfos>()
   const [userInfos, setUserInfos] = useState<UserInfos>()

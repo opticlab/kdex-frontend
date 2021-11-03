@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useMemo, useReducer } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { getBunnyFactoryContract } from 'utils/contractHelpers'
 import { MINT_COST, REGISTER_COST, ALLOWANCE_MULTIPLIER } from '../config'
 import { Actions, State, ContextType } from './types'
@@ -60,7 +60,7 @@ export const ProfileCreationContext = createContext<ContextType>(null)
 
 const ProfileCreationProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   // Initial checks
   useEffect(() => {

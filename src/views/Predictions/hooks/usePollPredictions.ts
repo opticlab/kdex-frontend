@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useAppDispatch } from 'state'
 import { useGetCurrentEpoch, useGetEarliestEpoch, useGetPredictionsStatus } from 'state/predictions/hooks'
 import { fetchClaimableStatuses, fetchLedgerData, fetchMarketData, fetchRounds } from 'state/predictions'
@@ -11,7 +11,7 @@ const POLL_TIME_IN_SECONDS = 10
 const usePollPredictions = () => {
   const timer = useRef<NodeJS.Timeout>(null)
   const dispatch = useAppDispatch()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const currentEpoch = useGetCurrentEpoch()
   const earliestEpoch = useGetEarliestEpoch()
   const status = useGetPredictionsStatus()

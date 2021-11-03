@@ -9,7 +9,7 @@ import {
   Button,
   ChevronUpIcon,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import orderBy from 'lodash/orderBy'
 import { useTranslation } from 'contexts/Localization'
 import { Vote, VotingStateLoadingStatus } from 'state/types'
@@ -32,7 +32,7 @@ const parseVotePower = (incomingVote: Vote) => {
 const Votes: React.FC<VotesProps> = ({ votes }) => {
   const [showAll, setShowAll] = useState(false)
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const orderedVotes = orderBy(votes, [parseVotePower, 'created'], ['desc', 'desc'])
   const displayVotes = showAll ? orderedVotes : orderedVotes.slice(0, VOTES_PER_VIEW)
   const voteStatus = useGetVotingStateLoadingStatus()

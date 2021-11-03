@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Box, Button, Heading, Flex } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
 import PageHeader from 'components/PageHeader'
@@ -51,7 +51,7 @@ const StyledHeaderInner = styled(Flex)`
 
 const Home = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { theme } = useTheme()
 
   return (

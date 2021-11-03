@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Grid, Text, Button, Input, BinanceIcon, ErrorIcon } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useTranslation } from 'contexts/Localization'
 import { NftToken } from 'state/nftMarket/types'
 import { Divider, RoundedImage } from '../shared/styles'
@@ -24,7 +24,7 @@ const TransferStage: React.FC<TransferStageProps> = ({
   continueToNextStage,
 }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const transferAddressEqualsConnectedAddress = transferAddress.toLowerCase() === account.toLowerCase()
   const getErrorText = () => {
     if (isInvalidTransferAddress) {

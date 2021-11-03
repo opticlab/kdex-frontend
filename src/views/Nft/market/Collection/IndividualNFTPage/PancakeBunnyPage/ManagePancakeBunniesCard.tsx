@@ -13,7 +13,7 @@ import {
   Skeleton,
   useModal,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useUserNfts } from 'state/nftMarket/hooks'
 import { NftLocation, NftToken, UserNftInitializationState } from 'state/nftMarket/types'
 import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -134,7 +134,7 @@ interface ManagePancakeBunniesCardProps {
 
 const ManagePancakeBunniesCard: React.FC<ManagePancakeBunniesCardProps> = ({ bunnyId, lowestPrice }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { userNftsInitializationState, nfts: userNfts } = useUserNfts()
   useFetchUserNfts()
 

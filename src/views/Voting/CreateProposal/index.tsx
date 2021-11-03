@@ -16,7 +16,7 @@ import {
 } from '@pancakeswap/uikit'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import times from 'lodash/times'
 import isEmpty from 'lodash/isEmpty'
 import { useInitialBlock } from 'state/block/hooks'
@@ -57,7 +57,7 @@ const CreateProposal = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [fieldsState, setFieldsState] = useState<{ [key: string]: boolean }>({})
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const initialBlock = useInitialBlock()
   const { push } = useHistory()
   const { library } = useWeb3Provider()

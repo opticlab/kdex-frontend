@@ -5,7 +5,7 @@ import { useTranslation } from 'contexts/Localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCake, useFarmAuctionContract } from 'hooks/useContract'
 import { ethersToBigNumber } from 'utils/bigNumber'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import useToast from 'hooks/useToast'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
@@ -22,7 +22,7 @@ const StyledReclaimBidCard = styled(Card)`
 
 const ReclaimBidCard: React.FC = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { callWithGasPrice } = useCallWithGasPrice()
 
   const [reclaimableAuction, checkForNextReclaimableAuction] = useReclaimAuctionBid()

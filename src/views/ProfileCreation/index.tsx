@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Redirect } from 'react-router'
 import Page from 'components/Layout/Page'
 import { useProfile } from 'state/profile/hooks'
@@ -12,7 +12,7 @@ import ProfileCreationProvider from './contexts/ProfileCreationProvider'
 import Steps from './Steps'
 
 const ProfileCreation = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { isInitialized, isLoading, hasProfile } = useProfile()
 
   useFetchUserNfts()

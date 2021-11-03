@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { parseUnits } from 'ethers/lib/utils'
 import { useAppDispatch } from 'state'
 import { updateUserStakedBalance, updateUserBalance, updateUserPendingReward } from 'state/actions'
@@ -27,7 +27,7 @@ const sousEmergencyUnstake = async (sousChefContract: any) => {
 
 const useUnstakePool = (sousId: number, enableEmergencyWithdraw = false) => {
   const dispatch = useAppDispatch()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const masterChefContract = useMasterchef()
   const sousChefContract = useSousChef(sousId)
 

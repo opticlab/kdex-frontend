@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link as RouterLink } from 'react-router-dom'
 import { Button, Heading, Text, Flex, Link, Breadcrumbs } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useTranslation } from 'contexts/Localization'
 import PageHeader from 'components/PageHeader'
 import PageSection from 'components/PageSection'
@@ -64,7 +64,7 @@ const AuctionContainer = styled(Flex)`
 const FarmAuction = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   const { currentAuction, bidders, connectedBidder, refreshBidders } = useCurrentFarmAuction(account)
   const FAQS_BG_LIGHT = 'linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)'

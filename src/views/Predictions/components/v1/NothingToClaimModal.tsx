@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import styled from 'styled-components'
 import {
   ModalContainer,
@@ -32,7 +32,7 @@ const CollectRoundWinningsModal: React.FC<InjectedModalProps> = ({ onDismiss }) 
   const [isFetching, setIsFetching] = useState(false)
   const [history, setHistory] = useState([])
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   const handleClick = () => {
     const header = [

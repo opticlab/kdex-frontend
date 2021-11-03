@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import BigNumber from 'bignumber.js'
 import { ethers } from 'ethers'
 import { parseUnits } from 'ethers/lib/utils'
@@ -46,7 +46,7 @@ const ContributeModal: React.FC<Props> = ({
   const { amountTokenCommittedInLP } = userPoolCharacteristics
   const { contract } = walletIfoData
   const [value, setValue] = useState('')
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { callWithGasPrice } = useCallWithGasPrice()
   const raisingTokenContract = useERC20(currency.address)
   const { t } = useTranslation()

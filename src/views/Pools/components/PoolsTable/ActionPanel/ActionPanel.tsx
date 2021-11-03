@@ -135,7 +135,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
   const { shouldShowBlockCountdown, blocksUntilStart, blocksRemaining, hasPoolStarted, blocksToDisplay } =
     getPoolBlockInfo(pool, currentBlock)
 
-  const isMetaMaskInScope = !!window.ethereum?.isMetaMask
+  const isMetaMaskInScope = !!window.klaytn?.isKaikas
   const tokenAddress = earningToken.address || ''
 
   const {

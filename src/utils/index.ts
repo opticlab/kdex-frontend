@@ -37,7 +37,7 @@ export function getBscScanLink(
       return `${BASE_BSC_SCAN_URLS[chainId]}/block/countdown/${data}`
     }
     default: {
-      return `${BASE_BSC_SCAN_URLS[chainId]}/address/${data}`
+      return `${BASE_BSC_SCAN_URLS[chainId]}/account/${data}`
     }
   }
 }

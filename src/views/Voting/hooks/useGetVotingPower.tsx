@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { getActivePools } from 'utils/calls'
 import { getAddress } from 'utils/addressHelpers'
 import { simpleRpcProvider } from 'utils/providers'
@@ -26,7 +26,7 @@ const initialState: State = {
 }
 
 const useGetVotingPower = (block?: number, isActive = true): State & { isLoading: boolean } => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const [votingPower, setVotingPower] = useState(initialState)
   const [isLoading, setIsLoading] = useState(!!account)
 

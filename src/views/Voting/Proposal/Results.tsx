@@ -12,7 +12,7 @@ import {
   Tag,
   CheckmarkCircleIcon,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import times from 'lodash/times'
 import { Vote, VotingStateLoadingStatus } from 'state/types'
 import { useGetVotingStateLoadingStatus } from 'state/voting/hooks'
@@ -30,7 +30,7 @@ const Results: React.FC<ResultsProps> = ({ choices, votes }) => {
   const { t } = useTranslation()
   const results = calculateVoteResults(votes)
   const votingStatus = useGetVotingStateLoadingStatus()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const totalVotes = getTotalFromVotes(votes)
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Flex } from '@pancakeswap/uikit'
 import orderBy from 'lodash/orderBy'
 import sum from 'lodash/sum'
@@ -29,7 +29,7 @@ interface IndividualPancakeBunnyPageProps {
 }
 
 const IndividualPancakeBunnyPage: React.FC<IndividualPancakeBunnyPageProps> = ({ bunnyId }) => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const [nothingForSaleBunny, setNothingForSaleBunny] = useState<NftToken>(null)
   const allBunnies = useGetAllBunniesByBunnyId(bunnyId)
   const [priceSort, setPriceSort] = useState<SortType>('asc')

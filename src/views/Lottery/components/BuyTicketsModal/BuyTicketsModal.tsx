@@ -15,7 +15,7 @@ import {
   ArrowForwardIcon,
 } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import tokens from 'config/constants/tokens'
 import { getFullDisplayBalance } from 'utils/formatBalance'
 import { BIG_ZERO, ethersToBigNumber } from 'utils/bigNumber'
@@ -58,7 +58,7 @@ enum BuyingStage {
 }
 
 const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { t } = useTranslation()
   const { theme } = useTheme()
   const {

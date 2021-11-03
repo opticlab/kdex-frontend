@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import {
   ArrowBackIcon,
   ArrowForwardIcon,
@@ -57,7 +57,7 @@ const MobileMenu = () => {
   const status = useGetPredictionsStatus()
   const activeIndex = getActiveIndex(isHistoryOpen, isChartOpen)
   const dispatch = useAppDispatch()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   const handleItemClick = (index: number) => {
     switch (index) {

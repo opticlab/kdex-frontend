@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useAppDispatch } from 'state'
 import { useGetLeaderboardFilters, useGetLeaderboardLoadingState } from 'state/predictions/hooks'
 import { LeaderboardLoadingState } from 'state/types'
@@ -14,7 +14,7 @@ import Filters from './components/Filters'
 const Leaderboard = () => {
   const leaderboardLoadingState = useGetLeaderboardLoadingState()
   const filters = useGetLeaderboardFilters()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const dispatch = useAppDispatch()
 
   useEffect(() => {

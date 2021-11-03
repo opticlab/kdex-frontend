@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import {
   Flex,
   LogoutIcon,
@@ -21,7 +21,7 @@ import WalletUserMenuItem from './WalletUserMenuItem'
 
 const UserMenu = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { logout } = useAuth()
   const { balance, fetchStatus } = useGetBnbBalance()
   const { isInitialized, isLoading, profile } = useProfile()

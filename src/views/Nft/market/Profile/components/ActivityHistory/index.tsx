@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { uniqBy } from 'lodash'
 import { isAddress } from 'utils'
 import { fetchUserActivity } from 'state/nftMarket/reducer'
@@ -21,7 +21,7 @@ import { Arrow, PageButtons } from '../../../components/PaginationButtons'
 const MAX_PER_PAGE = 8
 
 const ActivityHistory = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const dispatch = useAppDispatch()
   const { accountAddress } = useParams<{ accountAddress: string }>()
   const { theme } = useTheme()

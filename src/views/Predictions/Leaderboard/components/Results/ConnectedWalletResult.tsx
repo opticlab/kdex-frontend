@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Card, Heading, Table, Th, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import Container from 'components/Layout/Container'
 import { useAppDispatch } from 'state'
 import { fetchProfileAvatar } from 'state/profile'
@@ -11,7 +11,7 @@ import DesktopRow from './DesktopRow'
 import MobileRow from './MobileRow'
 
 const ConnectedWalletResult = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const accountResult = useGetOrFetchLeaderboardAddressResult(account)

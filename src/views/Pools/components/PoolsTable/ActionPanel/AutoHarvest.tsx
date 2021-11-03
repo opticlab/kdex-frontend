@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, Flex, TooltipText, useTooltip, Skeleton, Heading } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { getCakeVaultEarnings } from 'views/Pools/helpers'
 import { useTranslation } from 'contexts/Localization'
 import Balance from 'components/Balance'
@@ -16,7 +16,7 @@ interface AutoHarvestActionProps extends DeserializedPool {
 
 const AutoHarvestAction: React.FunctionComponent<AutoHarvestActionProps> = ({ userDataLoaded, earningTokenPrice }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   const {
     userData: { cakeAtLastUserAction, userShares },

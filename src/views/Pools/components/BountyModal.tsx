@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import BigNumber from 'bignumber.js'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import styled from 'styled-components'
 import { Modal, Text, Flex, Button, HelpIcon, AutoRenewIcon, useTooltip } from '@pancakeswap/uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -29,7 +29,7 @@ const Divider = styled.div`
 
 const BountyModal: React.FC<BountyModalProps> = ({ onDismiss, TooltipComponent }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { theme } = useTheme()
   const { toastError, toastSuccess } = useToast()
   const cakeVaultContract = useCakeVaultContract()

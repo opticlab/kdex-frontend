@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import BigNumber from 'bignumber.js'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { Contract } from 'ethers'
 import { BIG_ZERO } from 'utils/bigNumber'
 
 // Retrieve IFO allowance
 const useIfoAllowance = (tokenContract: Contract, spenderAddress: string, dependency?: any): BigNumber => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const [allowance, setAllowance] = useState(BIG_ZERO)
 
   useEffect(() => {

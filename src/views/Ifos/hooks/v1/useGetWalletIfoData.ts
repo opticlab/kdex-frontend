@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import BigNumber from 'bignumber.js'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useERC20, useIfoV1Contract } from 'hooks/useContract'
@@ -32,7 +32,7 @@ const useGetWalletIfoData = (ifo: Ifo): WalletIfoData => {
   const { address, currency } = ifo
   const { poolUnlimited } = state
 
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const contract = useIfoV1Contract(address)
   const currencyContract = useERC20(currency.address)
   const allowance = useIfoAllowance(currencyContract, address, poolUnlimited.isPendingTx)

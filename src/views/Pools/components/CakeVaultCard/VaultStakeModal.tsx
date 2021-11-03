@@ -13,7 +13,7 @@ import {
   IconButton,
 } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useAppDispatch } from 'state'
 import { BIG_TEN } from 'utils/bigNumber'
 import { usePriceCakeBusd } from 'state/farms/hooks'
@@ -70,7 +70,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
 }) => {
   const dispatch = useAppDispatch()
   const { stakingToken, earningToken, apr, stakingTokenPrice, earningTokenPrice } = pool
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const cakeVaultContract = useCakeVaultContract()
   const { callWithGasPrice } = useCallWithGasPrice()
   const {

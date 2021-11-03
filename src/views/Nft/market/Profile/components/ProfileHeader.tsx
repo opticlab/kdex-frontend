@@ -7,7 +7,7 @@ import { getBscScanLink } from 'utils'
 import { formatNumber } from 'utils/formatBalance'
 import truncateHash from 'utils/truncateHash'
 import { Achievement, Profile } from 'state/types'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import EditProfileAvatar from './EditProfileAvatar'
 import BannerHeader from '../../components/BannerHeader'
 import StatBox, { StatBoxItem } from '../../components/StatBox'
@@ -40,7 +40,7 @@ const ProfileHeader: React.FC<HeaderProps> = ({
   isProfileLoading,
 }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const [onEditProfileModal] = useModal(<EditProfileModal />, false)
 
   const isConnectedAccount = account?.toLowerCase() === accountPath?.toLowerCase()

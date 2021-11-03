@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useModal } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { getAnniversaryAchievementContract } from 'utils/contractHelpers'
 import AnniversaryAchievementModal from './AnniversaryAchievementModal'
 
@@ -18,7 +18,7 @@ interface GlobalCheckClaimStatusProps {
 const GlobalCheckClaimStatus: React.FC<GlobalCheckClaimStatusProps> = ({ excludeLocations }) => {
   const hasDisplayedModal = useRef(false)
   const [canClaimAnniversaryPoints, setCanClaimAnniversaryPoints] = useState(false)
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { pathname } = useLocation()
   const [onPresentAnniversaryModal] = useModal(<AnniversaryAchievementModal />)
 

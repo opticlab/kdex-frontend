@@ -9,7 +9,7 @@ import { ethersToBigNumber } from 'utils/bigNumber'
 import tokens from 'config/constants/tokens'
 import { parseUnits, formatEther } from 'ethers/lib/utils'
 import { useERC20, useNftMarketContract } from 'hooks/useContract'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import useToast from 'hooks/useToast'
@@ -44,7 +44,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
   const { t } = useTranslation()
   const { callWithGasPrice } = useCallWithGasPrice()
 
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const wbnbContract = useERC20(tokens.wbnb.address)
   const nftMarketContract = useNftMarketContract()
 

@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
 import useRefresh from 'hooks/useRefresh'
@@ -32,7 +32,7 @@ export const useGetLotteryGraphDataById = (lotteryId: string) => {
 }
 
 export const useFetchLottery = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { fastRefresh } = useRefresh()
   const dispatch = useAppDispatch()
   const currentLotteryId = useGetCurrentLotteryId()

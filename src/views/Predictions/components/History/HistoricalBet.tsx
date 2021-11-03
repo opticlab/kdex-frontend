@@ -11,7 +11,7 @@ import {
   useTooltip,
   WaitIcon,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import styled from 'styled-components'
 import { useAppDispatch } from 'state'
 import { Bet, PredictionStatus } from 'state/types'
@@ -61,7 +61,7 @@ const HistoricalBet: React.FC<BetProps> = ({ bet }) => {
   const status = useGetPredictionsStatus()
   const canClaim = useGetIsClaimable(bet.round.epoch)
   const dispatch = useAppDispatch()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   const toggleOpen = () => setIsOpen(!isOpen)
 

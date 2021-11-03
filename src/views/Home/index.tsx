@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PageSection from 'components/PageSection'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import useTheme from 'hooks/useTheme'
 import Container from 'components/Layout/Container'
 import { PageMeta } from 'components/Layout/Page'
@@ -42,7 +42,7 @@ const UserBannerWrapper = styled(Container)`
 
 const Home: React.FC = () => {
   const { theme } = useTheme()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   const HomeSectionContainerStyles = { margin: '0', width: '100%', maxWidth: '968px' }
 

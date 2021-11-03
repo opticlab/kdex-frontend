@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import NoWalletConnected from './WalletNotConnected'
 import { ProfileCreationContext } from './contexts/ProfileCreationProvider'
 import Mint from './Mint'
@@ -11,7 +11,7 @@ import UserName from './UserName'
 const Steps = () => {
   const { t } = useTranslation()
   const { isInitialized, currentStep } = useContext(ProfileCreationContext)
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
 
   if (!account) {
     return <NoWalletConnected />

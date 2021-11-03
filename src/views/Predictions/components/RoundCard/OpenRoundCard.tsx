@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import {
   Card,
   CardBody,
@@ -53,7 +53,7 @@ const OpenRoundCard: React.FC<OpenRoundCardProps> = ({
   const { t } = useTranslation()
   const { theme } = useTheme()
   const { toastSuccess } = useToast()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const dispatch = useAppDispatch()
   const { isSettingPosition, position } = state
   const isBufferPhase = Date.now() > (round.lockTimestamp + ROUND_BUFFER) * 1000

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useGetLotteriesGraphData, useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
 import fetchUnclaimedUserRewards from 'state/lottery/fetchUnclaimedUserRewards'
 
@@ -10,7 +10,7 @@ export enum FetchStatus {
 }
 
 const useGetUnclaimedRewards = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { isTransitioning, currentLotteryId } = useLottery()
   const userLotteryData = useGetUserLotteriesGraphData()
   const lotteriesData = useGetLotteriesGraphData()

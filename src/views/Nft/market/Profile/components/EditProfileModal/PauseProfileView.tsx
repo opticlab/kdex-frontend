@@ -8,7 +8,7 @@ import { fetchProfile } from 'state/profile'
 import useToast from 'hooks/useToast'
 import { formatBigNumber } from 'utils/formatBalance'
 import { useProfile as useProfileContract } from 'hooks/useContract'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { ToastDescriptionWithTx } from 'components/Toast'
 
@@ -24,7 +24,7 @@ const PauseProfilePage: React.FC<PauseProfilePageProps> = ({ onDismiss }) => {
   const { t } = useTranslation()
   const pancakeProfileContract = useProfileContract()
   const { callWithGasPrice } = useCallWithGasPrice()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { toastSuccess, toastError } = useToast()
   const dispatch = useAppDispatch()
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import { useParams } from 'react-router'
 import { isAddress } from 'utils'
 import { Flex, Text } from '@pancakeswap/uikit'
@@ -12,7 +12,7 @@ import ProfileHeader from './components/ProfileHeader'
 import NoNftsImage from './components/NoNftsImage'
 
 const NftProfile = () => {
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { accountAddress } = useParams<{ accountAddress: string }>()
   const { t } = useTranslation()
 

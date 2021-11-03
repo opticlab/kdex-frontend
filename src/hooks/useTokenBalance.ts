@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import BigNumber from 'bignumber.js'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import tokens from 'config/constants/tokens'
 import { getBep20Contract, getCakeContract } from 'utils/contractHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
@@ -26,7 +26,7 @@ const useTokenBalance = (tokenAddress: string) => {
     balance: BIG_ZERO,
     fetchStatus: NOT_FETCHED,
   })
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { fastRefresh } = useRefresh()
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export const useBurnedBalance = (tokenAddress: string) => {
 export const useGetBnbBalance = () => {
   const [fetchStatus, setFetchStatus] = useState(FetchStatus.NOT_FETCHED)
   const [balance, setBalance] = useState(ethers.BigNumber.from(0))
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const { lastUpdated, setLastUpdated } = useLastUpdated()
 
   useEffect(() => {

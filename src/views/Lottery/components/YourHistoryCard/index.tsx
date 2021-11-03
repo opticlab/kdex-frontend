@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
 import styled from 'styled-components'
 import {
   CardHeader,
@@ -49,7 +49,7 @@ const StyledCardBody = styled(CardBody)`
 
 const YourHistoryCard: React.FC<YourHistoryCardProps> = ({ handleShowMoreClick, numUserRoundsRequested }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { account } = useCaverJsReact()
   const [shouldShowRoundDetail, setShouldShowRoundDetail] = useState(false)
   const [selectedLotteryNodeData, setSelectedLotteryNodeData] = useState<LotteryRound>(null)
   const [selectedLotteryId, setSelectedLotteryId] = useState<string>(null)
