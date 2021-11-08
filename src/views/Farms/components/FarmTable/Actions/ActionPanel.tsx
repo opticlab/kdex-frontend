@@ -7,6 +7,7 @@ import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { getAddress } from 'utils/addressHelpers'
 import { getBscScanLink } from 'utils'
 import { CommunityTag, CoreTag, DualTag } from 'components/Tags'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 
 import HarvestAction from './HarvestAction'
 import StakedAction from './StakedAction'
@@ -140,6 +141,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
 }) => {
   const farm = details
 
+  const { chainId } = useActiveWeb3React()
   const { t } = useTranslation()
   const isActive = farm.multiplier !== '0X'
   const { quoteToken, token, dual } = farm
@@ -149,7 +151,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
     tokenAddress: token.address,
   })
   const lpAddress = getAddress(farm.lpAddresses)
-  const bsc = getBscScanLink(lpAddress, 'address')
+  const bsc = getBscScanLink(lpAddress, 'address', chainId)
   const info = `/info/pool/${lpAddress}`
 
   return (

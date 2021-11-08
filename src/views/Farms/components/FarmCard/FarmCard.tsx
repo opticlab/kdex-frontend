@@ -9,6 +9,7 @@ import ExpandableSectionButton from 'components/ExpandableSectionButton'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import { getAddress } from 'utils/addressHelpers'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import DetailsSection from './DetailsSection'
 import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
@@ -46,6 +47,7 @@ interface FarmCardProps {
 
 const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, cakePrice, account }) => {
   const { t } = useTranslation()
+  const { chainId } = useActiveWeb3React()
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
 
@@ -118,7 +120,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, cakePric
         {showExpandableSection && (
           <DetailsSection
             removed={removed}
-            bscScanAddress={getBscScanLink(lpAddress, 'address')}
+            bscScanAddress={getBscScanLink(lpAddress, 'address', chainId)}
             infoAddress={`/info/pool/${lpAddress}`}
             totalValueFormatted={totalValueFormatted}
             lpLabel={lpLabel}

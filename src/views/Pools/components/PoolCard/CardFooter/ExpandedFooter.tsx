@@ -25,6 +25,7 @@ import { registerToken } from 'utils/wallet'
 import { getBscScanLink } from 'utils'
 import Balance from 'components/Balance'
 import { getPoolBlockInfo } from 'views/Pools/helpers'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 
 interface ExpandedFooterProps {
   pool: DeserializedPool
@@ -39,6 +40,7 @@ const ExpandedWrapper = styled(Flex)`
 `
 
 const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
+  const { chainId } = useActiveWeb3React()
   const { t } = useTranslation()
   const { currentBlock } = useBlock()
   const {
@@ -120,7 +122,7 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
           <Text small>{hasPoolStarted ? t('Ends in') : t('Starts in')}:</Text>
           {blocksRemaining || blocksUntilStart ? (
             <Flex alignItems="center">
-              <Link external href={getBscScanLink(hasPoolStarted ? endBlock : startBlock, 'countdown')}>
+              <Link external href={getBscScanLink(hasPoolStarted ? endBlock : startBlock, 'countdown', chainId)}>
                 <Balance small value={blocksToDisplay} decimals={0} color="primary" />
                 <Text small ml="4px" color="primary" textTransform="lowercase">
                   {t('Blocks')}

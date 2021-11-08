@@ -27,6 +27,7 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import { registerToken } from 'utils/wallet'
 import { getBalanceNumber, getFullDisplayBalance } from 'utils/formatBalance'
 import { convertSharesToCake, getPoolBlockInfo } from 'views/Pools/helpers'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import Harvest from './Harvest'
 import Stake from './Stake'
 import Apr from '../Apr'
@@ -125,6 +126,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
     userData,
     isAutoVault,
   } = pool
+  const { chainId } = useActiveWeb3React()
   const { t } = useTranslation()
   const poolContractAddress = getAddress(contractAddress)
   const cakeVaultContractAddress = getCakeVaultAddress()
@@ -199,7 +201,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
       <Flex mb="8px" justifyContent="space-between">
         <Text>{hasPoolStarted ? t('Ends in') : t('Starts in')}:</Text>
         <Flex>
-          <Link external href={getBscScanLink(hasPoolStarted ? endBlock : startBlock, 'countdown')}>
+          <Link external href={getBscScanLink(hasPoolStarted ? endBlock : startBlock, 'countdown', chainId)}>
             <Balance fontSize="16px" value={blocksToDisplay} decimals={0} color="primary" />
             <Text ml="4px" color="primary" textTransform="lowercase">
               {t('Blocks')}
