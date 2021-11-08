@@ -38,6 +38,16 @@ const farms: SerializedFarmConfig[] = [
     quoteToken: serializedTokens.wbnb,
   },
   {
+    pid: 4,
+    lpSymbol: 'CAKE-KUSD',
+    lpAddresses: {
+      1001: '0x1EbdcF92AB5B374B459344F76Ab78D04147Ae8fc',
+      8217: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
+    },
+    token: serializedTokens.cake,
+    quoteToken: serializedTokens.kusd,
+  },
+  {
     pid: 2,
     lpSymbol: 'KUSD',
     lpAddresses: {
