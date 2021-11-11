@@ -12,7 +12,7 @@ import {
   BunnyPlaceholderIcon,
 } from '@pancakeswap/uikit'
 import { useCaverJsReact } from '@sixnetwork/caverjs-react-core'
-import { Token } from '@pancakeswap/sdk'
+import { Token } from '@opticlab/kdex-sdk'
 import { Ifo, PoolIds } from 'config/constants/types'
 import tokens from 'config/constants/tokens'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'

@@ -1,4 +1,4 @@
-import { Token } from '@pancakeswap/sdk'
+import { Token } from '@opticlab/kdex-sdk'
 
 interface WarningTokenList {
   [key: string]: Token

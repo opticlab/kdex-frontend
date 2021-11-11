@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent, Token } from '@pancakeswap/sdk'
+import { ChainId, JSBI, Percent, Token } from '@opticlab/kdex-sdk'
 import { mainnetTokens, testnetTokens } from './tokens'
 
 export const ROUTER_ADDRESS = '0xe85667bCEf9dbF45daE8A799c5cA8ADf136248AB'
