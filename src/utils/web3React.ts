@@ -3,7 +3,7 @@ import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { BscConnector } from '@binance-chain/bsc-connector'
 import { ConnectorNames } from '@pancakeswap/uikit'
 import { ethers } from 'ethers'
-import { CaverProvider } from 'klaytn-providers'
+import { CaverProvider, Formatter } from 'klaytn-providers'
 import getNodeUrl from './getRpcUrl'
 
 const POLLING_INTERVAL = 12000
@@ -26,8 +26,25 @@ export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.BSC]: bscConnector,
 }
 
+class CaverFormatter extends Formatter {
+  getDefaultFormats() {
+    const f = super.getDefaultFormats();
+    delete f.receipt.cumulativeGasUsed; //  Not supported by klaytn EN
+    delete f.receipt.type;  //  Different with ethereum
+    return f;
+  }
+}
+
+const formatter = new CaverFormatter();
+
+class ModifiedCaverProvider extends CaverProvider {
+  static getFormatter() {
+    return formatter;
+  }
+}
+
 export const getLibrary = (provider): CaverProvider => {
-  const library = new CaverProvider(provider)
+  const library = new ModifiedCaverProvider(provider)
   library.pollingInterval = POLLING_INTERVAL
   return library
 }
